@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scrap Vehicles</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="app" class="hidden">
+        <div class="panel" role="dialog" aria-modal="true">
+            <div class="panel-header">
+                <!-- Player Level and XP Display -->
+                <div class="player-stats">
+                    <div class="level-display">
+                        <span class="level-label">Level</span>
+                        <span class="level-value" id="playerLevel">1</span>
+                    </div>
+                    <div class="xp-display">
+                        <div class="xp-text">
+                            <span id="currentXP">0</span> / <span id="nextLevelXP">100</span> XP
+                        </div>
+                        <div class="xp-bar">
+                            <div class="xp-fill" id="xpFill" style="width: 0%"></div>
+                        </div>
+                        <div class="xp-label">
+                            <span id="xpToNext">100</span> XP to next level
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h1 class="title">Today's Scrap Vehicles</h1>
+                    <div class="subtitle">Find these vehicles and use /scrapcar near them</div>
+                </div>
+
+                    <!-- Progress overlay (no focus required) -->
+                    <div id="scrapProgress" class="progress hidden" aria-live="polite">
+                        <div class="progress-card">
+                            <div class="progress-title">Scrapping vehicle…</div>
+                            <div class="progress-sub">Please wait while parts are removed</div>
+                            <div class="bar">
+                                <div class="bar-fill" id="barFill" style="width:0%"></div>
+                            </div>
+                            <div class="progress-time"><span id="progressTime">30.0</span>s</div>
+                        </div>
+                    </div>
+                <button id="closeBtn" class="close" aria-label="Close">×</button>
+            </div>
+
+            <div id="grid" class="grid" aria-live="polite"></div>
+
+            <div class="panel-footer">
+                <div class="tip">Project Downtown RP</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    </body>
+    </html>
